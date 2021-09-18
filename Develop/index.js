@@ -84,12 +84,33 @@ function writeToFile(fileName, data) {
         if (err) {
             return console.log(err);
         }
-        console.log();
-    })
+        console.log('Your README.md has been generated!');
+    });
 }
 
+const writeFileAsync = util.promisify(writeToFile);
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    try {
+        // Reference inquiter array with prompts
+        const userResponses = await inquirer.prompt(questions);
+        console.log("Your responses: ", userResponses);
+        console.log("Your responses have been logged. Calling to Github...");
+
+        const userInfo = await fs.appendFile.getUser(userResponses);
+        console.log("Your GitHub user info: ", userInfo);
+
+        //pass data to markdown
+        console.log("Generating your markdown");
+        const markdown = generateMarkdown(userResponses, userInfo);
+        console.log(markdown);
+
+        //write markdown
+        await writeFileAsync('README.md', markdown);
+    } catch (error) {
+        console.log(error);
+    }
+};
 
 // Function call to initialize app
 init();
