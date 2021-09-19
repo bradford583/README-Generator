@@ -3,6 +3,7 @@ const inquirer = require('inquirer');
 const util = require('util')
 const fs = require('fs');
 const choices = require('inquirer/lib/objects/choices');
+const axios = require("axios");
 const api = require('./utils/api.js');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 // TODO: Create an array of q   uestions for user input
@@ -76,7 +77,7 @@ const questions = [
         type: 'list',
         name: 'licenses',
         message: 'Choose the license for your project',
-        choices: ['afl-3.0', 'apache-2.0', 'artistic-2.0', 'bsl-1.0', 'bsd-2-clause', 'bsd-3-clause', 'bsd-3-clause-clear', 'cc', 'cc0-1.0', 'cc-by-4.0', 'cc-by-sa-4.0']
+        choices: ['none', 'afl-3.0', 'apache-2.0', 'artistic-2.0', 'bsl-1.0', 'bsd-2-clause', 'bsd-3-clause', 'bsd-3-clause-clear', 'cc', 'cc0-1.0', 'cc-by-4.0', 'cc-by-sa-4.0']
     }
     
 ];
