@@ -2,8 +2,10 @@
 const inquirer = require('inquirer');
 const util = require('util')
 const fs = require('fs');
-const Choices = require('inquirer/lib/objects/choices');
-// TODO: Create an array of questions for user input
+const choices = require('inquirer/lib/objects/choices');
+const api = require('./utils/api.js');
+const generateMarkdown = require('./utils/generateMarkdown.js');
+// TODO: Create an array of q   uestions for user input
 const questions = [
     //get users name
     {
@@ -40,13 +42,14 @@ const questions = [
     // title of project
     {
         type: 'input',
-        name: 'function',
+        name: 'projectInfo',
         message: 'What does your project do?',
         //make sure something was entered
         validate: function(answer) {
             if (answer.length < 1) {
-                return console.log("You must enter a title for your project:");
+                return console.log("You must enter the name of the repo.");
             }
+            return true
         }
     },
     //motivation for project
@@ -59,7 +62,7 @@ const questions = [
     {
         type: 'list',
         name: 'languages',
-        Choices: ["html", "css", "js", "node", "python", 'c++', 'c.', 'java', 'c#', 'visual basic'],
+        choices: ["html", "css", "js", "node", "python", 'c++', 'c.', 'java', 'c#', 'visual basic'],
         message: 'What languages did you use on you project?'
     },
     //installation
@@ -90,14 +93,14 @@ function writeToFile(fileName, data) {
 
 const writeFileAsync = util.promisify(writeToFile);
 // TODO: Create a function to initialize app
-function init() {
+async function init() {
     try {
         // Reference inquiter array with prompts
         const userResponses = await inquirer.prompt(questions);
         console.log("Your responses: ", userResponses);
         console.log("Your responses have been logged. Calling to Github...");
 
-        const userInfo = await fs.appendFile.getUser(userResponses);
+        const userInfo = await api.getUser(userResponses);
         console.log("Your GitHub user info: ", userInfo);
 
         //pass data to markdown
