@@ -3,7 +3,7 @@ const inquirer = require('inquirer');
 const util = require('util')
 const fs = require('fs');
 const choices = require('inquirer/lib/objects/choices');
-const axios = require("axios");
+//const axios = require("axios");
 const api = require('./utils/api.js');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 // TODO: Create an array of q   uestions for user input

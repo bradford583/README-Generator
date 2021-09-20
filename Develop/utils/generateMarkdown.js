@@ -27,44 +27,44 @@ function generateMarkdown(userResponses, userInfo) {
 
   //installation
   if (userResponses.installation !== '') {
-    draftMarkdown +=`##Installation ${data.installation}`
+    draftMarkdown +=`##Installation ${userResponses.installation}`
   };
 
   //Usage
   if (userResponses.usage !== '') {
-    draftMarkdown +=`##Usage ${data.usage}`
+    draftMarkdown +=`##Usage ${userResponses.usage}`
   };
 
   //contributing
   if (userResponses.contributing !== '') {
-    draftMarkdown +=`##Contributing ${data.contributing}`
+    draftMarkdown +=`##Contributing ${userResponses.contributing}`
   };
 
   //tests
   if (userResponses.tests !== '') {
-    draftMarkdown +=`##Tests ${data.tests}`
+    draftMarkdown +=`##Tests ${userResponses.tests}`
   };
 
   //Questions
-  let draftDeveloper = 
-  `
-  ---
-  ##Questions?
-  ![Developer Profile Picture](${userInfo.avatar_url})
+  // let draftDeveloper = 
+  // `
+  // ---
+  // ##Questions?
+  
 
-  For any questions, please contact me with the information below:
+  // For any questions, please contact me with the information below:
 
-  GitHub: [@${userInfo.login}](${userInfo.url})
-  `;
+  // GitHub: [@${userInfo.login}](${userInfo.url})
+  // `;
 
-  //if null add to developer section
-  if (userInfo.email !== null) {
-    draftDeveloper +=
-    `Email: ${userInfo.email}`
-  };
+  // //if null add to developer section
+  // if (userInfo.email !== null) {
+  //   draftDeveloper +=
+  //   `Email: ${userInfo.email}`
+  // };
 
-  //add dev section to markdown
-  draftMarkdown += draftDeveloper;
+  // //add dev section to markdown
+  // draftMarkdown += draftDeveloper;
 
   return draftMarkdown;
 };
