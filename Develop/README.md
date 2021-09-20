@@ -1,6 +1,6 @@
-# undefined
+# README.md Generator
 
   ## Description
 
-  undefined
-   * [License](#license)##Installation undefined##Usage undefined##Contributing undefined##Tests undefined
+  Creates a dynamic readme.md
+   * [License](#license)##Installation Follow Command Line prompts##Languages node##Usage undefined##Contributing undefined##Tests undefined

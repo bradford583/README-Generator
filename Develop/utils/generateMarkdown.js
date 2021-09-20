@@ -30,6 +30,10 @@ function generateMarkdown(userResponses, userInfo) {
     draftMarkdown +=`##Installation ${userResponses.installation}`
   };
 
+  if (userResponses.languages !== '') {
+    draftMarkdown +=`##Languages ${userResponses.languages}`
+  }
+
   //Usage
   if (userResponses.usage !== '') {
     draftMarkdown +=`##Usage ${userResponses.usage}`

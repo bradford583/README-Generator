@@ -11,8 +11,8 @@ const questions = [
     //get users name
     {
         type: 'input',
-        name: 'name',
-        message: 'What is your name?' 
+        name: 'title',
+        message: 'What is the name of your project?' 
     },
     //github username
     {
@@ -27,24 +27,11 @@ const questions = [
         return true;
     }
     },
-    //get repos
-    {
-        type:'input',
-        name:'project',
-        message:'Please enter the project name:',
-        //make sure something was entered
-        validate: function(answer) {
-            if (answer.length < 1) {
-                return console.log("You must enter the name of the repo.");
-            }
-            return true;
-        }
-    },
     // title of project
     {
         type: 'input',
-        name: 'projectInfo',
-        message: 'What does your project do?',
+        name: 'description',
+        message: 'Describe your project?',
         //make sure something was entered
         validate: function(answer) {
             if (answer.length < 1) {
@@ -69,8 +56,8 @@ const questions = [
     //installation
     {
         type: 'input',
-        name: 'instruct',
-        message: 'How do you use your application?'
+        name: 'installation',
+        message: 'Enter your project instructions and examples of it in use for Usage Section.'
     },
     //licenses
     {
