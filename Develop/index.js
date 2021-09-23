@@ -64,7 +64,7 @@ const questions = [
         type: 'list',
         name: 'licenses',
         message: 'Choose the license for your project',
-        choices: ['none', 'afl-3.0', 'apache-2.0', 'artistic-2.0', 'bsl-1.0', 'bsd-2-clause', 'bsd-3-clause', 'bsd-3-clause-clear', 'cc', 'cc0-1.0', 'cc-by-4.0', 'cc-by-sa-4.0']
+        choices: ['none', 'apache-2.0', 'bsd-3-clause', 'mit']
     }
     
 ];
