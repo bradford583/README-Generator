@@ -12,7 +12,14 @@ const questions = [
     {
         type: 'input',
         name: 'title',
-        message: 'What is the name of your project?' 
+        message: 'What is the name of your project?',
+        //make sure something was entered
+        validate: function(answer) {
+            if (answer.length < 1) {
+                return console.log("You must enter the name of the repo.");
+            }
+            return true
+        }
     },
     //github username
     {
@@ -31,20 +38,13 @@ const questions = [
     {
         type: 'input',
         name: 'description',
-        message: 'Describe your project?',
-        //make sure something was entered
-        validate: function(answer) {
-            if (answer.length < 1) {
-                return console.log("You must enter the name of the repo.");
-            }
-            return true
-        }
+        message: 'Describe your project?'
     },
-    //motivation for project
+    //installation
     {
         type: 'input',
-        name: 'motiv',
-        message: 'What was your motivation for this project?'
+        name: 'installation',
+        message: 'Enter your project instructions and examples of it in use for Usage Section.'
     },
     //languages section
     {
@@ -53,11 +53,23 @@ const questions = [
         choices: ["html", "css", "js", "node", "python", 'c++', 'c.', 'java', 'c#', 'visual basic'],
         message: 'What languages did you use on you project?'
     },
-    //installation
+    //motivation for project
     {
         type: 'input',
-        name: 'installation',
-        message: 'Enter your project instructions and examples of it in use for Usage Section.'
+        name: 'usage',
+        message: 'What was your motivation for this project?'
+    },
+    //contributing
+    {
+        type: 'input',
+        name: 'contributing',
+        message: 'What other developers contributed to this project?'
+    },
+    //tests
+    {
+        type: 'input',
+        name: 'tests',
+        message: 'What tests did you do on this app?'
     },
     //licenses
     {

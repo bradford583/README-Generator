@@ -66,9 +66,13 @@ function generateMarkdown(userResponses, userInfo) {
   ${userResponses.tests}
   
   ## License
-
+  
   This project uses a ${renderLicenseLink(userResponses.licenses)} license.
-  `
+  
+  
+  ### Questions
+  
+  For any questions, please contact message me on GitHub: ${userResponses.username}`
 
   //Questions
   // let draftDeveloper = 

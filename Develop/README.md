@@ -1,12 +1,12 @@
-# tesst [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+# README.md Generator
 
   ## Description
 
-  test
+  Generates a readme eazy peazy
 
   ## Installation 
   
-  tests
+  Just follow the command line prompts
   
   ## Languages 
   
@@ -14,17 +14,21 @@
   
   ## Usage 
   
-  undefined
+  To get a passing grade in this course
   
   ## Contributing 
   
-  undefined
+  none
   
   ## Tests 
   
-  undefined
+  command line testing
   
   ## License
-
-  This project uses a [Apache-2.0](https://opensource.org/licenses/Apache-2.0) license.
   
+  This project uses a undefined license.
+  
+  
+  ### Questions
+  
+  For any questions, please contact message me on GitHub: Bradford583
